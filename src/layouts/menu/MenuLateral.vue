@@ -1,11 +1,11 @@
 <template>
-  <q-drawer v-model="drawer" show-if-above :width="350" :breakpoint="500" bordered class="bg-grey-1">
+  <q-drawer bordered show-if-above v-model="drawer" side="left">
     <q-list>
       <div id="menu-lateral">
         <template v-for="menu in menus" :key="menu.id">
           <template v-if="menu.ehMenuPai">
             <q-expansion-item :icon="menu.icone ? menu.icone : 'navigate_next'" :label="menu.nome" :caption="menu.legenda"
-              class="q-expansion-item-menu">
+              class="q-expansion-item-menu" :content-inset-level="0.2">
               <template v-for="submenu in menu.subMenus" :key="submenu.id">
                 <q-expansion-item v-if="submenu.ehMenuPai" :icon="submenu.icone ? submenu.icone : 'navigate_next'"
                   :label="submenu.nome" :caption="submenu.legenda">
